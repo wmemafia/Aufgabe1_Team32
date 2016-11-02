@@ -3,12 +3,19 @@
 
 function toggleColumnVisibility(col) {
     var tbl = document.getElementById('dataTable');
-    var col = document.getElementsByTagName('col')[col];
-    if (col) {
-        if (col.style.visibility === "collapse") {
-            col.style.visibility = "unset";
+    var tbody = tbl.getElementsByTagName('tbody')[0];
+    var thead = tbl.getElementsByTagName('thead')[0];
+    var rows = tbody.rows;
+    var head = thead.rows[0].cells;
+    for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].cells;
+        var cell = cells[col];
+        if (cell.style.display === "none") {
+            cell.style.display = "table-cell";
+            head[col].style.display = "table-cell";
         } else {
-            col.style.visibility = "collapse";
+            cell.style.display = "none";
+            head[col].style.display = "none";
         }
     }
 }
@@ -61,21 +68,4 @@ function unresponsiveIt() {
     }
 
 }
-
-function preventDefault() {
-    var temp = document.getElementsByClassName('toggles');
-    for (var i = 0; i < temp.length; i++) {
-        console.log(temp[i]);
-        for (var x = 0; x < temp[i].length; x++) {
-            console.log(temp[i]);
-            temp[i][x].addEventListener("click", function(event) {
-                console.log('TOD UND VERDERBEN');
-                event.preventDefault();
-            });
-        }
-    }
-
-}
-
-window.onload = preventDefault;
 
