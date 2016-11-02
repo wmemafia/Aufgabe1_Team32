@@ -17,13 +17,10 @@ h1 {
 
 header {
 	background: #d1d1d1;
-	background: -moz-linear-gradient(top, #d1d1d1 0%, #f0f0f0 100%);
-	background: -webkit-linear-gradient(top, #d1d1d1 0%,#f0f0f0 100%);
-	background: linear-gradient(to bottom, #d1d1d1 0%,#f0f0f0 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#f0f0f0',GradientType=0 );
 	position: sticky;
 	top: 0;
 	border-bottom: 1px solid #d1d1d1;
+	background: linear-gradient(to bottom, #d1d1d1 0%,#f0f0f0 100%);
 }
 
 img#logo:hover {
