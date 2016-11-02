@@ -52,8 +52,8 @@ a:hover {
 }
 
 #logo {
-	float: left;
 	margin: 0 50px 0 0;
+	cursor: pointer;
 }
 
 .menu {
@@ -62,35 +62,61 @@ a:hover {
 
 nav,
 ul {
-	height: 83px;
+	height: auto;
 }
 
 .menu:first-child {
 	border-left: 1px solid #d1d1d1;
 }
 
+.menu {
+	background: #ffffff;
+	width: 100%;
+	display: none;
+	position: absolute;
+}
+
 .menu li {
-	float: left;
 	border-right: 1px solid #d1d1d1;
 	height: 100%;
 	font-size: 16px;
 	color: #555;
-	padding: 40px 15px;
 	transition: 0.5s ease;
+	cursor: pointer;
+	padding: 15px 15px;
 }
 .menu li:hover {
 	background: #ccc;
 	color: #000;
 }
 
-colgroup col:nth-child(6),
-colgroup col:nth-child(7) {
+.menu-sandwich {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	display: inline-block;
+	font-size: 20px;
+	padding: 5px 6px;
+	background: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.menu-sandwich:hover {
+	background: #666;
+}
+
+tr th:nth-child(6),
+tr th:nth-child(7),
+tr td:nth-child(6),
+tr td:nth-child(7) {
 	display: none;
 }
 
 table {
 	width: 100%;
 }
+
 thead {
 	text-align: left;
 	font-size: 15px;
@@ -104,8 +130,9 @@ thead tr td {
 	border-bottom: 2px solid #666;
 }
 
+tr th,
 tr td {
-	padding: 6px 0;
+	padding: 6px 3px;
 	border-bottom: 1px solid #d1d1d1;
 }
 
@@ -116,6 +143,7 @@ tr td {
 
 .toggles a {
 	color: #aaa;
+	outline: none;
 }
 
 .toggles a:hover {
@@ -124,6 +152,18 @@ tr td {
 
 .clearing {
 	clear: both;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
 }
 
 .small-100 {
@@ -140,13 +180,22 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+
+
 	#responsive-content {
 	-webkit-column-count: 2;
 	-moz-column-count: 2;
 	column-count: 2;
 	}
-	colgroup col:nth-child(6) {
-		display: block;
+
+	tr th,
+	tr td {
+		padding: 6px 0;
+	}
+
+	tr th:nth-child(6),
+	tr td:nth-child(6) {
+		display: table-cell;
 	}
 
 	.medium-50 {
@@ -157,6 +206,38 @@ footer {
 	.text-right {
 		text-align: right;
 	}
+
+}
+
+/**
+ * Responsive Nav Media Query
+ */
+@media screen and (min-width: 911px) {
+	nav,
+	ul {
+		height: 83px;
+	}
+
+	.menu {
+		display: block;
+		background: inherit;
+		left: 200px;
+	}
+
+	#logo,
+	.menu,
+	.menu li {
+		float: left;
+	}
+
+	.menu li {
+		padding: 40px 15px;
+	}
+
+	.menu-sandwich {
+		display: none;
+	}
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -167,7 +248,8 @@ footer {
 	column-count: 3;
 	}
 
-	colgroup col:nth-child(7) {
-		display: block;
+	tr th:nth-child(7),
+	tr td:nth-child(7) {
+		display: table-cell;
 	}
 }

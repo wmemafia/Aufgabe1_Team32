@@ -5,11 +5,11 @@ function toggleColumnVisibility(col) {
     var tbl = document.getElementById('dataTable');
     var col = document.getElementsByTagName('col')[col];
     if (col) {
-        if (col.style.display === "none") {
-            col.style.display = "inline";
+        if (col.style.visibility === "collapse") {
+            col.style.visibility = "unset";
         } else {
-            col.style.display = "none";
-        }     
+            col.style.visibility = "collapse";
+        }
     }
 }
 
@@ -34,6 +34,34 @@ function sort(col, asc) {
         arr[i] = "<td>" + arr[i].join("</td><td>") + "</td>";
     }
     tbody.innerHTML = "<tr>" + arr.join("</tr><tr>") + "</tr>";
+}
+
+function toggleMenu() {
+    var menu = document.getElementById('menu');
+    if (menu) {
+        if (menu.style.display === "none") {
+            menu.style.display = "block";
+        } else {
+            menu.style.display = "none";
+        }
+
+    }
+}
+
+function unresponsiveIt() {
+    var w = window.outerWidth;
+    var menu = document.getElementById('menu');
+    if(w > 910) {
+        menu.removeAttribute('style');
+    }
+    else {
+        console.log('is not 910');
+        if(!menu.hasAttribute('style')) {
+            console.log('hast not style');
+            menu.style.display = "none";
+        }
+    }
+
 }
 
 function preventDefault() {
