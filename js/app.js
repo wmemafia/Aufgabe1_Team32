@@ -5,10 +5,10 @@ function toggleColumnVisibility(col) {
     var tbl = document.getElementById('dataTable');
     var col = document.getElementsByTagName('col')[col];
     if (col) {
-        if (col.style.visibility === "collapse") {
-            col.style.visibility = "";
+        if (col.style.display === "none") {
+            col.style.display = "inline";
         } else {
-            col.style.visibility = "collapse";
+            col.style.display = "none";
         }     
     }
 }
@@ -35,4 +35,21 @@ function sort(col, asc) {
     }
     tbody.innerHTML = "<tr>" + arr.join("</tr><tr>") + "</tr>";
 }
+
+function preventDefault() {
+    var temp = document.getElementsByClassName('toggles');
+    for (var i = 0; i < temp.length; i++) {
+        console.log(temp[i]);
+        for (var x = 0; x < temp[i].length; x++) {
+            console.log(temp[i]);
+            temp[i][x].addEventListener("click", function(event) {
+                console.log('TOD UND VERDERBEN');
+                event.preventDefault();
+            });
+        }
+    }
+
+}
+
+window.onload = preventDefault;
 
