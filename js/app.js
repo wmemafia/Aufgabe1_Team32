@@ -55,9 +55,7 @@ function unresponsiveIt() {
         menu.removeAttribute('style');
     }
     else {
-        console.log('is not 910');
         if(!menu.hasAttribute('style')) {
-            console.log('hast not style');
             menu.style.display = "none";
         }
     }
