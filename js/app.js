@@ -56,7 +56,7 @@ function toggleMenu() {
 }
 
 function unresponsiveIt() {
-    var w = window.outerWidth;
+    var w = window.innerWidth;
     var menu = document.getElementById('menu');
     if(w > 910) {
         menu.removeAttribute('style');
