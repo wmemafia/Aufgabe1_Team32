@@ -110,6 +110,7 @@ tr td:nth-child(7) {
 	display: none;
 }
 
+
 table {
 	width: 100%;
 }
@@ -172,7 +173,6 @@ footer {
 	-moz-column-count: 2;
 	column-count: 2;
 	}
-
 	tr th,
 	tr td {
 		padding: 6px 0;
@@ -237,4 +237,5 @@ footer {
 	tr td:nth-child(7) {
 		display: table-cell;
 	}
+    
 }
