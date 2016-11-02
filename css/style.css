@@ -151,18 +151,6 @@ tr td {
 	clear: both;
 }
 
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-.clearfix:after {
-    clear: both;
-}
-.clearfix {
-    *zoom: 1;
-}
-
 .small-100 {
 	float: none;
 }
