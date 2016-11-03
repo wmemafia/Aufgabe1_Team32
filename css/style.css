@@ -53,10 +53,6 @@ a:hover {
 	cursor: pointer;
 }
 
-.menu {
-	float: left;
-}
-
 nav,
 ul {
 	height: auto;
@@ -67,6 +63,7 @@ ul {
 }
 
 .menu {
+	float: left;
 	background: #ffffff;
 	width: 100%;
 	display: none;
@@ -197,7 +194,7 @@ footer {
 /**
  * Responsive Nav Media Query
  */
-@media screen and (min-width: 911px) {
+@media screen and (min-width: 915px) {
 	nav,
 	ul {
 		height: 83px;
@@ -207,6 +204,7 @@ footer {
 		display: block;
 		background: inherit;
 		left: 200px;
+		width: unset;
 	}
 
 	#logo,
