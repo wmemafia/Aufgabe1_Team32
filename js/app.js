@@ -1,6 +1,9 @@
 // JavaScript source code
 
-
+/**
+ * toggles the visibiliy of the selected table column
+ * @param {number} col - the number of the column to be toggled
+ */
 function toggleColumnVisibility(col) {
     var tbl = document.getElementById('dataTable');
     var tbody = tbl.getElementsByTagName('tbody')[0];
@@ -19,7 +22,11 @@ function toggleColumnVisibility(col) {
         }
     }
 }
-
+/**
+ * sorts the table based on the selected column ascending or descending
+ * @param {number} col - the column number on which should be sorted
+ * @param {number} asc - ascending when value is greater zero, descending when value is less than zero
+ */
 function sort(col, asc) {
     var tbl = document.getElementById('dataTable');
     var tbody = tbl.getElementsByTagName('tbody')[0];
@@ -35,6 +42,9 @@ function sort(col, asc) {
     }
     
     arr.sort(function (a, b) {
+        console.log('a' + a[col]);
+        console.log('b' + b[col]);
+        console.log(a[col] == b[col] ? 0 : ((a[col] > b[col]) ? asc : -1 * asc));
         return (a[col] == b[col] ? 0 : ((a[col] > b[col]) ? asc : -1 * asc));
     });
     for (i = 0; i < rlen; i++) {
@@ -43,6 +53,9 @@ function sort(col, asc) {
     tbody.innerHTML = "<tr>" + arr.join("</tr><tr>") + "</tr>";
 }
 
+/**
+ * toggles menu style from none to block and vice versa
+ */
 function toggleMenu() {
     var menu = document.getElementById('menu');
     if (menu) {
@@ -55,6 +68,9 @@ function toggleMenu() {
     }
 }
 
+/**
+ * deletes menu style if inner width is greater then 910px and adds style if it is less than 910px
+ */
 function unresponsiveIt() {
     var w = window.innerWidth;
     var menu = document.getElementById('menu');
