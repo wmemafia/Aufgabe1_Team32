@@ -237,7 +237,7 @@ footer {
 		display: block;
 		background: inherit;
 		left: 200px;
-		width: unset;
+		width: inherit;
 	}
 
 	#logo,
