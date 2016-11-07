@@ -1,3 +1,10 @@
+/*
+ * CSS mobile first
+ */
+
+/*
+ * Layout for whole site
+ */
 body {
 	font-size: 14px;
 	font-family: Roboto, Verdana, sans-serif;
@@ -15,6 +22,36 @@ h1 {
 	max-width: 1170px;
 }
 
+/**
+ * Utility Classes
+ */
+a {
+	color: #8EC541;
+}
+
+a:hover {
+	color: #628F1D;
+	text-decoration: none;
+}
+
+.text-right {
+	text-align: left;
+}
+
+.clearing {
+	clear: both;
+}
+
+/**
+ * Responsive class
+ */
+.small-100 {
+	float: none;
+}
+
+/*
+ * Header Styles
+ */
 header {
 	background: #d1d1d1;
 	position: sticky;
@@ -25,27 +62,6 @@ header {
 
 img#logo:hover {
 	filter: url(img/desaturate.svg#greyscale);
-}
-
-a {
-	color: #8EC541;
-}
-
-a:hover {
-	color: #628F1D;
-	text-decoration: none;
-}
-
-#responsive-content {
-	-webkit-column-count: 1;
-	-moz-column-count: 1;
-	column-count: 1;
-	border: 1px solid #d1d1d1;
-	border-top: 2px solid #8EC541;
-	box-shadow: 0 2px 10px 0px #d1d1d1;
-	padding: 14px 10px;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
 }
 
 #logo {
@@ -79,6 +95,7 @@ ul {
 	cursor: pointer;
 	padding: 15px 15px;
 }
+
 .menu li:hover {
 	background: #ccc;
 	color: #000;
@@ -100,14 +117,25 @@ ul {
 	background: #666;
 }
 
-tr th:nth-child(6),
-tr th:nth-child(7),
-tr td:nth-child(6),
-tr td:nth-child(7) {
-	display: none;
+/**
+ * Main Styles
+ */
+
+#responsive-content {
+	-webkit-column-count: 1;
+	-moz-column-count: 1;
+	column-count: 1;
+	border: 1px solid #d1d1d1;
+	border-top: 2px solid #8EC541;
+	box-shadow: 0 2px 10px 0px #d1d1d1;
+	padding: 14px 10px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
 }
 
-
+/**
+ * Table Styles
+ */
 table {
 	width: 100%;
 }
@@ -131,6 +159,16 @@ tr td {
 	border-bottom: 1px solid #d1d1d1;
 }
 
+tr th:nth-child(6),
+tr th:nth-child(7),
+tr td:nth-child(6),
+tr td:nth-child(7) {
+	display: none;
+}
+
+/**
+ * Visibility Switches for table
+ */
 .toggles {
 	color: #666;
 	padding: 20px 0;
@@ -145,31 +183,25 @@ tr td {
 	text-decoration: none;
 }
 
-.clearing {
-	clear: both;
-}
-
-.small-100 {
-	float: none;
-}
-
+/**
+ * Footer Styles
+ */
 footer {
 	border-top: 2px solid #8EC541;
 	padding: 15px 0 30px;
 }
 
-.text-right {
-	text-align: left;
-}
-
+/**
+ * Styles for medium screens (a.k.a Tablets)
+ */
 @media screen and (min-width: 768px) {
-
 
 	#responsive-content {
 	-webkit-column-count: 2;
 	-moz-column-count: 2;
 	column-count: 2;
 	}
+
 	tr th,
 	tr td {
 		padding: 6px 0;
@@ -195,6 +227,7 @@ footer {
  * Responsive Nav Media Query
  */
 @media screen and (min-width: 915px) {
+	
 	nav,
 	ul {
 		height: 83px;
@@ -223,6 +256,9 @@ footer {
 
 }
 
+/**
+ * Styles for large screens (a.k.a Desktops)
+ */
 @media screen and (min-width: 1200px) {
 	
 	#responsive-content {
